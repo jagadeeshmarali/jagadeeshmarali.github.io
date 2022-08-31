@@ -1,0 +1,89 @@
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact</h2>
+    </div>
+
+    <div class="row" data-aos="fade-in">
+
+      <!-- <div class="col-lg-5 d-flex align-items-stretch">
+        <div class="info">
+          <div class="address">
+            <i class="icofont-google-map"></i>
+            <h4>Location:</h4>
+            <p>D:No 2/814, Sharada Nagar , Adoni, Andhra Pradesh (518302)</p>
+          </div>
+
+          <div class="email">
+            <i class="icofont-envelope"></i>
+            <h4>Email:</h4>
+            <p>jagadeesh26597@gmail.com</p>
+          </div>
+
+          <div class="phone">
+            <i class="icofont-phone"></i>
+            <h4>Call:</h4>
+            <p>+91 6281163177</p>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.2031936869466!2d77.28513121559035!3d15.634164555100844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb64e786e850aa9%3A0xa95d964249122dc0!2sA.P.Housing%20Board%20Colony%2C%20Shair%20Khan%20Colony%2C%20Adoni%2C%20Andhra%20Pradesh%20518301!5e0!3m2!1sen!2sin!4v1625309677754!5m2!1sen!2sin"
+            frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+        </div>
+
+      </div> -->
+
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form [formGroup]="contactMeForm" role="form" class="php-email-form">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" class="form-control" formControlName="name" id="name" data-rule="minlen:4"
+                data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name">Your Email</label>
+              <input type="email" class="form-control" formControlName="email" name="email" id="email" data-rule="email"
+                data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name">Subject</label>
+            <input type="text" class="form-control" name="subject" formControlName="subject" id="subject"
+              data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+            <div class="validate"></div>
+          </div>
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea class="form-control" name="message" formControlName="message" rows="10" data-rule="required"
+              data-msg="Please write something for us"></textarea>
+            <div class="validate"></div>
+          </div>
+          <!-- <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div> -->
+          <div class="form-group">
+            <re-captcha formControlName="recaptcha"></re-captcha>
+          </div>
+          <div class="text-center">
+            <button type="submit" (click)="sendMessage();" [disabled]="!contactMeForm.valid"
+              class="btn btn-round btn-block btn-sm">
+              <span *ngIf="!loading">Send Message</span>
+              <span *ngIf="loading">Loading...</span>
+              <span *ngIf="loading" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
